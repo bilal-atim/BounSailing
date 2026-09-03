@@ -1,0 +1,133 @@
+{
+  "id": "marmaris",
+  "name": "Marmaris",
+  "version": 1,
+  "built": "2026-08-07",
+  "bounds": [
+    27.55,
+    36.35,
+    28.65,
+    37.1
+  ],
+  "center": [
+    28.256,
+    36.836
+  ],
+  "defaultZoom": 11.5,
+  "minZoom": 6,
+  "maxZoom": 18,
+  "official": false,
+  "sources": [
+    {
+      "id": "osm",
+      "name": "OpenStreetMap",
+      "role": "Coastline, land, harbours, coastal roads, place names",
+      "licence": "ODbL 1.0",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "official": false
+    },
+    {
+      "id": "openseamap",
+      "name": "OpenSeaMap / OSM seamark tags",
+      "role": "Buoys, beacons, lights, anchorages, restricted areas, hazards",
+      "licence": "ODbL 1.0",
+      "attribution": "\u00a9 OpenStreetMap contributors",
+      "official": false
+    },
+    {
+      "id": "emodnet",
+      "name": "EMODnet Bathymetry DTM",
+      "role": "Depth areas, depth contours, soundings",
+      "licence": "CC BY 4.0",
+      "attribution": "EMODnet Bathymetry Consortium",
+      "official": false
+    }
+  ],
+  "layers": [
+    {
+      "id": "land",
+      "file": "land.geojson",
+      "type": "polygon",
+      "bytes": 791289,
+      "features": 1
+    },
+    {
+      "id": "inland_water",
+      "file": "inland_water.geojson",
+      "type": "polygon",
+      "bytes": 309681,
+      "features": 201
+    },
+    {
+      "id": "depth_areas",
+      "file": "depth_areas.geojson",
+      "type": "polygon",
+      "bytes": 2485783,
+      "features": 7
+    },
+    {
+      "id": "depth_contours",
+      "file": "depth_contours.geojson",
+      "type": "line",
+      "bytes": 2600601,
+      "features": 1467
+    },
+    {
+      "id": "soundings",
+      "file": "soundings.geojson",
+      "type": "point",
+      "bytes": 264314,
+      "features": 2166
+    },
+    {
+      "id": "seamarks",
+      "file": "seamarks.geojson",
+      "type": "point",
+      "bytes": 27445,
+      "features": 59
+    },
+    {
+      "id": "hazards",
+      "file": "hazards.geojson",
+      "type": "point",
+      "bytes": 12102,
+      "features": 74
+    },
+    {
+      "id": "areas",
+      "file": "areas.geojson",
+      "type": "polygon",
+      "bytes": 285,
+      "features": 1
+    },
+    {
+      "id": "harbours",
+      "file": "harbours.geojson",
+      "type": "point",
+      "bytes": 16262,
+      "features": 86
+    },
+    {
+      "id": "structures",
+      "file": "structures.geojson",
+      "type": "mixed",
+      "bytes": 73349,
+      "features": 404
+    },
+    {
+      "id": "places",
+      "file": "places.geojson",
+      "type": "point",
+      "bytes": 54237,
+      "features": 380
+    },
+    {
+      "id": "roads",
+      "file": "roads.geojson",
+      "type": "line",
+      "bytes": 947468,
+      "features": 2591
+    }
+  ],
+  "totalBytes": 7582816
+}

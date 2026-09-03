@@ -1,0 +1,53 @@
+# ---- macOS ----
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ---- IDE / editor ----
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+
+# ---- Android / Gradle ----
+.gradle/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+*.aab
+*.apk
+*.ap_
+*.dex
+*.hprof
+
+# ---- İmzalama sırları (asla commit etme) ----
+*.jks
+*.keystore
+signing.properties
+key.properties
+google-services.json
+
+# ---- Yerel JDK / araçlar ----
+tools/jdk-*/
+tools/**/jdk-*/
+
+# ---- map-builder (Python) ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.python-version
+map-builder/cache/
+map-builder/output/
+
+# ---- Loglar / geçici dosyalar ----
+*.log
+*.tmp
+tmp/
