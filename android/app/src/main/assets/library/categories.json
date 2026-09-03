@@ -1,0 +1,10 @@
+[
+  { "id": "hazirlik",   "title": "Gezi Hazırlığı ve Tekne Düzeni", "subtitle": "Checklist, tekne tanıtımı, yaşam alanı kuralları" },
+  { "id": "roller",     "title": "Teknede Görevler",                "subtitle": "Kim ne yapar: dümenci, trimci, başüstü ve diğerleri" },
+  { "id": "temel",      "title": "Temel Beceriler",                 "subtitle": "Düğümler, seyirler, trim ve güvenlik kuralları" },
+  { "id": "manevralar", "title": "Manevralar",                      "subtitle": "Tramola, kavança, balon, yanaşma ve POB" },
+  { "id": "seyir",      "title": "Seyir ve Navigasyon",             "subtitle": "Navigasyon, zodi, telsiz, gece ve sert hava" },
+  { "id": "guvenlik",   "title": "Güvenlik ve Acil Durum",          "subtitle": "İlk yardım, acil senaryolar, çatışma kuralları" },
+  { "id": "yaris",      "title": "Yarışçılık",                      "subtitle": "Start, taktik ve yarış günü" },
+  { "id": "referans",   "title": "Referans",                        "subtitle": "Terimler sözlüğü ve gezi programı" }
+]

@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MarmarisNav"
+rootProject.name = "BounSailing"
 include(":app")

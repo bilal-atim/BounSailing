@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1-yildiz-teorik-kitabi",
+    "title": "1. Yıldız Teorik Kitabı",
+    "file": "1-yildiz-teorik-kitabi.md",
+    "chars": 73568
+  },
+  {
+    "id": "2-yildiz-teorik-kitabi",
+    "title": "2. Yıldız Teorik Kitabı",
+    "file": "2-yildiz-teorik-kitabi.md",
+    "chars": 122256
+  },
+  {
+    "id": "balon",
+    "title": "Balon",
+    "file": "balon.md",
+    "chars": 1400
+  },
+  {
+    "id": "denizde-catismayi-onleme-kurallari",
+    "title": "Denizde Çatışmayı Önleme Kuralları",
+    "file": "denizde-catismayi-onleme-kurallari.md",
+    "chars": 3998
+  },
+  {
+    "id": "haberlesme",
+    "title": "Haberleşme",
+    "file": "haberlesme.md",
+    "chars": 14424
+  },
+  {
+    "id": "meteoroloji",
+    "title": "Meteoroloji",
+    "file": "meteoroloji.md",
+    "chars": 5119
+  },
+  {
+    "id": "seyirler-ve-manevralar",
+    "title": "Seyirler ve Manevralar",
+    "file": "seyirler-ve-manevralar.md",
+    "chars": 9681
+  },
+  {
+    "id": "yariscilik-1",
+    "title": "Yarışçılık",
+    "file": "yariscilik-1.md",
+    "chars": 2881
+  },
+  {
+    "id": "yelken-fizigi",
+    "title": "Yelken Fiziği",
+    "file": "yelken-fizigi.md",
+    "chars": 490
+  },
+  {
+    "id": "yelken-tarihi-ve-tekne-donanimlari",
+    "title": "Yelken Tarihi ve Tekne Donanımları",
+    "file": "yelken-tarihi-ve-tekne-donanimlari.md",
+    "chars": 2852
+  },
+  {
+    "id": "acil-durum-senaryolari",
+    "title": "Acil Durum Senaryoları",
+    "file": "acil-durum-senaryolari.md",
+    "chars": 56149
+  },
+  {
+    "id": "basustunun-el-kitabi",
+    "title": "Başüstünün El Kitabı",
+    "file": "basustunun-el-kitabi.md",
+    "chars": 119589
+  },
+  {
+    "id": "dugum-2",
+    "title": "Düğümler 2",
+    "file": "dugum-2.md",
+    "chars": 1473
+  },
+  {
+    "id": "gece-seyrinde-dikkat-edilmesi-gereken-hususlar",
+    "title": "Gece Seyri",
+    "file": "gece-seyrinde-dikkat-edilmesi-gereken-hususlar.md",
+    "chars": 29308
+  },
+  {
+    "id": "gezi-ve-yelken-seyri",
+    "title": "Gezi ve Yelken Seyri",
+    "file": "gezi-ve-yelken-seyri.md",
+    "chars": 8692
+  },
+  {
+    "id": "gezi-egitimleri-el-kitabi",
+    "title": "Gezi Eğitimleri El Kitabı",
+    "file": "gezi-egitimleri-el-kitabi.md",
+    "chars": 38097
+  },
+  {
+    "id": "gezi-programi-ve-checklist",
+    "title": "Örnek Gezi Programı ve Checklist",
+    "file": "gezi-programi-ve-checklist.md",
+    "chars": 3257
+  },
+  {
+    "id": "gezi",
+    "title": "Gezi Eğitimleri (Sunum)",
+    "file": "gezi.md",
+    "chars": 11603
+  },
+  {
+    "id": "ilk-yardim",
+    "title": "İlk Yardım",
+    "file": "ilk-yardim.md",
+    "chars": 18852
+  },
+  {
+    "id": "sert-hava-seyri",
+    "title": "Sert Hava Seyri",
+    "file": "sert-hava-seyri.md",
+    "chars": 11284
+  },
+  {
+    "id": "temel-denizcilik-terimleri",
+    "title": "Temel Denizcilik Terimleri",
+    "file": "temel-denizcilik-terimleri.md",
+    "chars": 6963
+  },
+  {
+    "id": "trim",
+    "title": "Yelken Trimi",
+    "file": "trim.md",
+    "chars": 17713
+  }
+]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Marmaris Nav</string>
+    <string name="app_name">Boun Sailing</string>
     <string name="nav_channel_name">Navigation</string>
     <string name="nav_channel_desc">Active navigation, track recording and anchor watch</string>
     <string name="alarm_channel_name">Anchor alarm</string>

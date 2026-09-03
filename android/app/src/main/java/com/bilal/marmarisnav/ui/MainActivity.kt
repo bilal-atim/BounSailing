@@ -48,8 +48,8 @@ class MainActivity : ComponentActivity() {
             }
 
             MarmarisNavTheme(chartTheme = settings.theme) {
-                MarmarisNavRoot(
-                    viewModel = viewModel,
+                BounSailingRoot(
+                    chartViewModel = viewModel,
                     onRequestPermissions = ::requestPermissions,
                 )
             }
