@@ -6,7 +6,8 @@ the surrounding coastal waters, built to the design in [GDD.md](GDD.md).
 There are two clients, sharing one set of content:
 
 - **[web/](web/)** — a PWA that runs on iOS, Android and the desktop. This is
-  the cross-platform client; see [web/README.md](web/README.md) to run or deploy it.
+  the cross-platform client, deployed from Netlify; see
+  [web/README.md](web/README.md) to run or deploy it.
 - **[android/](android/)** — the native Android app. Keep it for what a browser
   cannot do: background track recording and an anchor alarm that works with the
   screen off.
@@ -56,9 +57,18 @@ BounSailing/
 
 ## Building the APK
 
-The build uses a JDK 21 kept under `tools/`, wired up through
-`android/gradle.properties`, so it does not depend on whatever JDK happens to be
-on the path.
+The build needs **JDK 21** — AGP 8.7 rejects newer versions, and current macOS
+ships 26 — so the repository carries one under `tools/`.
+
+Gradle reads `org.gradle.java.home` before any build script runs and will not
+resolve it relative to the project, so it cannot be committed portably: an
+absolute path is wrong on every machine but the one that wrote it. Point Gradle
+at the bundled JDK from your own machine, once:
+
+```sh
+echo "org.gradle.java.home=$PWD/tools/jdk-21.0.12+8/Contents/Home" \
+  >> ~/.gradle/gradle.properties
+```
 
 ```sh
 cd android

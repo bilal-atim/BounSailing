@@ -1,0 +1,42 @@
+# Deploys the PWA in web/.
+#
+# Netlify builds from a private repository on the free tier, which GitHub Pages
+# does not, so the repository can stay closed while the app is still served over
+# the HTTPS that service workers and the Geolocation API both require.
+
+[build]
+  # web/assets and web/sw-version.js are derived from the Android asset tree,
+  # which is the single source of truth, so they are generated here rather than
+  # committed. This is also what stamps the offline cache version, so a content
+  # change always rotates the cache.
+  command = "python3 tools/web/sync_assets.py"
+  publish = "web"
+
+# The service worker must never be served from a stale edge copy: a pinned one
+# would keep handing out an old app that the user has no way to clear.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sw-version.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# The chart package is immutable for the life of a release and is the expensive
+# part to fetch, so let the browser keep it.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
