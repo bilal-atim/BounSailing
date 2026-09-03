@@ -1,0 +1,51 @@
+# Publishes the PWA in web/ to GitHub Pages.
+#
+# Pages serves the artifact at the site root, so only web/ is uploaded — the
+# Android app, the chart pipeline and the bundled JDK stay out of it.
+name: Deploy web app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'android/app/src/main/assets/**'
+      - 'tools/web/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# A queued deploy should wait for the running one rather than cancel it, so a
+# half-uploaded site is never left live.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the content packages
+        # web/assets and web/sw-version.js are derived from the Android asset
+        # tree, which is the single source of truth, so they are generated here
+        # rather than committed. This is also what stamps the offline cache
+        # version, so a content change always rotates the cache.
+        run: python3 tools/web/sync_assets.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

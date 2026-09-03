@@ -6,7 +6,7 @@ the surrounding coastal waters, built to the design in [GDD.md](GDD.md).
 There are two clients, sharing one set of content:
 
 - **[web/](web/)** — a PWA that runs on iOS, Android and the desktop. This is
-  the cross-platform client, deployed from Netlify; see
+  the cross-platform client, published to GitHub Pages; see
   [web/README.md](web/README.md) to run or deploy it.
 - **[android/](android/)** — the native Android app. Keep it for what a browser
   cannot do: background track recording and an anchor alarm that works with the
@@ -21,6 +21,34 @@ The chart package, the training library and the map glyphs live once, in
 > not been checked by a hydrographic office. Depths, hazards and navigation marks
 > may be wrong, missing or out of date. Use it alongside official charts, never
 > instead of them.
+
+## Credits and licensing
+
+**Chart data.** The chart package is derived from OpenStreetMap and OpenSeaMap
+seamark tags, © OpenStreetMap contributors, licensed under the
+[Open Database License](https://opendatacommons.org/licenses/odbl/) (ODbL 1.0),
+and from the [EMODnet Bathymetry](https://emodnet.ec.europa.eu/en/bathymetry)
+DTM. Both are attributed in the app and in
+`android/app/src/main/assets/maps/marmaris/manifest.json`. Anything you build
+from the derived database here inherits the ODbL's share-alike terms.
+
+**Training documents.** Everything under `Resources/` was written by members of
+the Boğaziçi Üniversitesi Denizcilik ve Yelken Kulübü and is reproduced here for
+the club's own training use. They are not all under the same terms:
+
+- The *1. Yıldız* and *2. Yıldız* course books carry an explicit waiver — "No
+  Copyright!… tüm okur-yazarlar kitap içindeki tüm bilgileri kullanmakta,
+  eleştirmekte, eklemeler, çıkartmalar ve değişiklikler yapmakta özgürdür."
+- The remaining documents are the work of named individual authors and carry no
+  licence statement. They are credited on each topic page in the app and in the
+  documents themselves. If you are one of those authors and would rather your
+  work were not published here, open an issue and it will be removed.
+
+**Code.** The application code has no licence attached, which means the usual
+default: all rights reserved. Ask before reusing it.
+
+**MapLibre GL JS** is vendored under `web/vendor/` under its own
+[BSD-3-Clause licence](web/vendor/maplibre-gl-LICENSE.txt).
 
 ---
 
