@@ -124,6 +124,17 @@ export class LibraryView {
       return;
     }
 
+    const brand = el('div', 'brand');
+    const logo = el('img');
+    logo.src = 'icons/logo-wordmark.png';
+    logo.alt = 'Boğaziçi Üniversitesi Denizcilik ve Yelken Kulübü';
+    // Intrinsic size is set so the header does not reflow once the image lands.
+    logo.width = 720;
+    logo.height = 440;
+    logo.decoding = 'async';
+    brand.appendChild(logo);
+    frag.appendChild(brand);
+
     frag.appendChild(el('div', 'section-head', 'Eğitim Konuları'));
     frag.appendChild(el('div', 'section-sub',
       `${this.library.topics.length} konu · ${this.library.sources.length} kaynak belge`));

@@ -23,7 +23,7 @@ export const PALETTES = {
     track: '#00796B', waypoint: '#7B1FA2', waypointHalo: '#FFFFFF',
     bearingLine: '#E91E63', anchorCircle: '#0E5E41', anchorCircleAlarm: '#D32F2F',
     boat: '#D32F2F',
-    ui: { surface: '#FFFFFF', onSurface: '#15202B', muted: '#41505C', accent: '#0B5C8A' },
+    ui: { surface: '#FFFFFF', onSurface: '#15202B', muted: '#41505C', accent: '#1B6785' },
   },
   dusk: {
     background: '#2C4A5C', deepWater: '#1B3040',

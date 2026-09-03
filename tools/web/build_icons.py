@@ -29,9 +29,11 @@ BACKGROUND = (255, 255, 255, 255)
 # The mark sits above the wordmark; the split is the blank band between them.
 MARK_BOTTOM_FRACTION = 0.70
 
-# How much of the icon the mark fills. A maskable icon may be cropped to a
-# circle by the launcher, so its mark is kept inside the 80% safe zone.
-SCALE = {"normal": 0.80, "maskable": 0.62}
+# How much of the icon the mark fills. The mark is wider than it is tall, so
+# these are generous: fitting the long side is what decides the size. A maskable
+# icon may be cropped to a circle by the launcher, so its mark is kept well
+# inside the 80% safe zone.
+SCALE = {"normal": 0.88, "maskable": 0.68}
 
 
 def mark(logo):

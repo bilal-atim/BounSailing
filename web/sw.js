@@ -34,6 +34,7 @@ const SHELL = [
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/icon-180.png',
+  'icons/logo-wordmark.png',
 ];
 
 async function precache() {

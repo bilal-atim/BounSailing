@@ -12,7 +12,7 @@
 
 body[data-theme="day"] {
   --bg: #F2F4F6; --surface: #FFFFFF; --on-surface: #15202B;
-  --muted: #41505C; --accent: #0B5C8A; --border: #DCE3E9;
+  --muted: #41505C; --accent: #1B6785; --border: #DCE3E9;
   --surface-alt: #E9EEF2; --danger: #C62828;
 }
 body[data-theme="dusk"] {
@@ -87,6 +87,11 @@ html, body {
   background: none; border: 0; padding: 4px; color: var(--muted);
   display: flex; cursor: pointer;
 }
+
+.brand { display: flex; justify-content: center; padding: 18px 16px 6px; }
+.brand img { width: auto; height: 86px; max-width: 72%; object-fit: contain; }
+/* The mark is dark teal on transparent, which disappears on the night ground. */
+body[data-theme="night"] .brand img { opacity: .55; filter: brightness(1.4); }
 
 .section-head { padding: 14px 16px 2px; font-weight: 600; }
 .section-sub { padding: 0 16px 8px; font-size: 13px; color: var(--muted); }
