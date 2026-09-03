@@ -1,7 +1,19 @@
-# Marmaris Nav
+# Boun Sailing
 
-An offline marine chartplotter for Android, scoped to Marmaris and the
-surrounding coastal waters. Built to the design in [GDD.md](GDD.md).
+A sailing training library and an offline marine chartplotter for Marmaris and
+the surrounding coastal waters, built to the design in [GDD.md](GDD.md).
+
+There are two clients, sharing one set of content:
+
+- **[web/](web/)** — a PWA that runs on iOS, Android and the desktop. This is
+  the cross-platform client; see [web/README.md](web/README.md) to run or deploy it.
+- **[android/](android/)** — the native Android app. Keep it for what a browser
+  cannot do: background track recording and an anchor alarm that works with the
+  screen off.
+
+The chart package, the training library and the map glyphs live once, in
+`android/app/src/main/assets/`, and are mirrored into the web app by
+`tools/web/sync_assets.py`.
 
 > **This is not an official chart.** The package is generated from
 > OpenStreetMap, OpenSeaMap seamark tags and the EMODnet Bathymetry model. It has
@@ -14,8 +26,13 @@ surrounding coastal waters. Built to the design in [GDD.md](GDD.md).
 ## Layout
 
 ```
-SeaNavigation/
+BounSailing/
 ├── GDD.md                   design document
+├── Resources/               club training documents (source of the library)
+├── web/                     the PWA — iOS, Android, desktop
+├── tools/
+│   ├── library/             library content pipeline
+│   └── web/                 asset sync into the web app
 ├── android/                 the Android application
 │   └── app/src/main/
 │       ├── java/com/bilal/marmarisnav/

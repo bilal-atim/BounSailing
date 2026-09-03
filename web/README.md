@@ -1,0 +1,111 @@
+# Boun Sailing — web (PWA)
+
+The cross-platform client. One codebase that runs on iOS, Android and the
+desktop, installable to the home screen, and fully usable with no signal.
+
+## Why a PWA rather than a second native app
+
+The chart package the Android client ships is thirteen plain GeoJSON files plus
+a manifest — which is exactly the format MapLibre GL **JS** consumes. That made
+the browser the cheapest route to a second platform by a wide margin: the chart,
+the library content and the glyphs are reused byte for byte, and only the view
+layer is written twice.
+
+The alternative, Kotlin Multiplatform, would have meant writing a MapLibre
+Native iOS interop layer from scratch, since MapLibre has no KMP binding.
+
+## What runs where
+
+| | Android app | Web app (PWA) |
+|---|---|---|
+| Kütüphane | ✅ | ✅ |
+| Çevrimdışı harita | ✅ | ✅ |
+| Canlı GPS mevkii | ✅ | ✅ |
+| Notlar | — | ✅ |
+| Arka planda iz kaydı | ✅ | ❌ |
+| Demir alarmı (ekran kapalıyken) | ✅ | ❌ |
+
+**The last two rows are the real cost of the web route.** A browser tab cannot
+hold a foreground service, so track recording and the anchor alarm only run
+while the app is open and the screen is awake. On iOS there is no way around
+this. For a plotter used at the helm with the screen on it is fine; for an
+unattended anchor watch overnight it is not, and the Android app remains the
+right tool for that.
+
+## Running it locally
+
+`web/assets/` is generated, not committed, so a fresh clone needs one build step
+before the app has any content to show:
+
+```sh
+python3 tools/web/sync_assets.py    # once, and after any content change
+cd web && python3 -m http.server 8000
+```
+
+Then open <http://127.0.0.1:8000/>. `localhost` counts as a secure origin, so
+the service worker and geolocation both work without a certificate.
+
+## Updating the content
+
+The chart package and the library live in the Android asset tree, which is the
+single source of truth. After changing anything there:
+
+```sh
+python3 tools/web/sync_assets.py      # or: cd web && npm run sync
+```
+
+This mirrors `android/app/src/main/assets/{maps,library,glyphs}` into
+`web/assets/`, writes `assets/index.json` (the listing the service worker
+precaches) and stamps `sw-version.js` with a content hash, which is what rotates
+the offline cache. **Do not edit `web/assets/` by hand — it is overwritten.**
+
+## Deploying
+
+The app is a static site: any host that serves files over **HTTPS** will do —
+GitHub Pages, Netlify, Cloudflare Pages. HTTPS is not optional: service workers
+and the Geolocation API both refuse to run on a plain-http origin other than
+localhost, which means no offline chart and no GPS.
+
+Upload the contents of `web/` except `node_modules/`.
+
+### Installing on a phone
+
+- **iOS (Safari):** open the site, Share → *Add to Home Screen*. It then runs
+  full-screen without Safari's chrome. Note that Safari is the only engine that
+  can install a PWA on iOS; Chrome on iOS cannot.
+- **Android (Chrome):** open the site, then *Install app* from the menu.
+
+The first launch downloads about 8 MB of chart and library content into the
+cache. Do that on wifi before leaving the marina; after that the app is fully
+offline.
+
+## Layout
+
+```
+web/
+├── index.html              app shell, three tabs
+├── sw.js                   offline cache (network-first shell, cache-first content)
+├── sw-version.js           generated — cache version stamp
+├── manifest.webmanifest
+├── css/app.css             theme tokens for day / dusk / night
+├── js/
+│   ├── app.js              tab shell, toasts, service-worker registration
+│   ├── notes.js            Notlar tab (localStorage)
+│   ├── library/            content loader, Markdown engine, search, views
+│   └── chart/              palette, style, icons, geodesy, map view
+├── vendor/maplibre-gl.*    pinned MapLibre GL JS 4.7.1
+└── assets/                 generated — mirrored from the Android asset tree
+```
+
+`js/chart/style.js`, `js/chart/palette.js`, `js/chart/icons.js` and
+`js/chart/nav.js` are ports of the Kotlin `ChartStyle`, `ChartPalette`,
+`ChartIcons`, `Geodesy` and `Format`; `js/library/*` ports `LibraryModel`,
+`Markdown` and `LibrarySearch`. Keeping the two in step is manual — a change to
+the chart style or the search ranking has to be made in both.
+
+## Not an official chart
+
+Generated from OpenStreetMap, OpenSeaMap seamark tags and the EMODnet
+Bathymetry model. It has not been checked by a hydrographic office. Depths,
+hazards and navigation marks may be wrong, missing or out of date. Use it
+alongside official charts, never instead of them.

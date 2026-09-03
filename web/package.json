@@ -1,0 +1,16 @@
+{
+  "name": "boun-sailing-web",
+  "version": "1.0.0",
+  "scripts": {
+    "sync": "python3 ../tools/web/sync_assets.py",
+    "start": "python3 -m http.server 8000"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Boun Sailing PWA — egitim kutuphanesi ve Marmaris cevrimdisi deniz haritasi",
+  "dependencies": {
+    "maplibre-gl": "^4.7.1"
+  },
+  "private": true,
+  "type": "module"
+}
