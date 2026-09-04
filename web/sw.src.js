@@ -5,19 +5,20 @@
  * start in aeroplane mode renders exactly what a warm one does.
  */
 
-// The cache name is baked in by tools/web/sync_assets.py rather than kept in a
-// mutable global: a service worker is stopped and restarted freely, and a
-// restarted worker that fell back to a default name would read and write a
-// different cache than the one it filled.
-importScripts('sw-version.js');
-
-const CACHE = `bounsailing-${self.CACHE_VERSION}`;
+// This file is the TEMPLATE. tools/web/sync_assets.py substitutes the content
+// hash below and writes the result to web/sw.js, which is what actually ships.
+//
+// The version has to live inside this file rather than in a script it imports,
+// because a browser decides whether to install a new worker by comparing the
+// BYTES of the registered script. A worker whose own source never changed is
+// never replaced, so its cache is never rebuilt and the app keeps serving the
+// content it first installed — however many times the site is redeployed.
+const CACHE = 'bounsailing-__CACHE_VERSION__';
 
 const SHELL = [
   './',
   'index.html',
   'manifest.webmanifest',
-  'sw-version.js',
   'css/app.css',
   'js/app.js',
   'js/notes.js',

@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build the content packages
-        # web/assets and web/sw-version.js are derived from the Android asset
+        # web/assets and web/sw.js are derived from the Android asset
         # tree, which is the single source of truth, so they are generated here
         # rather than committed. This is also what stamps the offline cache
         # version, so a content change always rotates the cache.

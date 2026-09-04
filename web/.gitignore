@@ -4,4 +4,7 @@ node_modules/
 # The originals live in android/app/src/main/assets/; these are derived,
 # so they are rebuilt in CI rather than carried in the repository.
 assets/
-sw-version.js
+
+# Generated from sw.src.js by the same script; the version stamp has to live
+# inside the worker or the browser never installs a new one.
+sw.js

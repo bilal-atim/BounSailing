@@ -162,7 +162,26 @@ library.load().catch((err) => {
 });
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch((err) => console.warn('sw', err));
+  window.addEventListener('load', async () => {
+    // A page opened before the new worker took over is holding content the old
+    // cache handed it, so it is reloaded once the handover happens. Nothing is
+    // stale on a first install, which claims a page that had no controller.
+    const wasControlled = !!navigator.serviceWorker.controller;
+    let reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (reloading || !wasControlled) return;
+      reloading = true;
+      window.location.reload();
+    });
+
+    try {
+      const registration = await navigator.serviceWorker.register('sw.js');
+      // An installed app can run for weeks without the browser checking on its
+      // own, so ask on every start. The worker carries its own version stamp,
+      // so this is a no-op unless the content actually moved on.
+      await registration.update();
+    } catch (err) {
+      console.warn('sw', err);
+    }
   });
 }

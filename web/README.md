@@ -56,8 +56,15 @@ python3 tools/web/sync_assets.py      # or: cd web && npm run sync
 
 This mirrors `android/app/src/main/assets/{maps,library,glyphs}` into
 `web/assets/`, writes `assets/index.json` (the listing the service worker
-precaches) and stamps `sw-version.js` with a content hash, which is what rotates
-the offline cache. **Do not edit `web/assets/` by hand — it is overwritten.**
+precaches) and writes `sw.js` from `sw.src.js` with a content hash stamped into
+it, which is what rotates the offline cache. **Do not edit `web/assets/` or
+`web/sw.js` by hand — they are overwritten.**
+
+The version has to be stamped *inside* the worker. A browser installs a new
+service worker only when the bytes of the registered script change, so a worker
+that read its version from a file it imported would never be replaced — and the
+app would keep serving the content it first installed, however many times the
+site was redeployed.
 
 ## Deploying
 
@@ -69,7 +76,7 @@ optional.**
 It is published to **GitHub Pages** by
 [`.github/workflows/pages.yml`](../.github/workflows/pages.yml), which runs on
 every push to `main` that touches the web app or the content it is built from.
-The workflow generates `web/assets/` and `web/sw-version.js` from the Android
+The workflow generates `web/assets/` and `web/sw.js` from the Android
 asset tree and uploads `web/` as the Pages artifact, so nothing generated has to
 be committed or kept in sync by hand.
 
@@ -92,8 +99,8 @@ only when upgrading it.
 ```
 web/
 ├── index.html              app shell, three tabs
-├── sw.js                   offline cache (network-first shell, cache-first content)
-├── sw-version.js           generated — cache version stamp
+├── sw.src.js               offline cache (network-first shell, cache-first content)
+├── sw.js                   generated from sw.src.js — carries the version stamp
 ├── manifest.webmanifest
 ├── css/app.css             theme tokens for day / dusk / night
 ├── js/
