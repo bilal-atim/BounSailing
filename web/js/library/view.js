@@ -117,7 +117,12 @@ export class LibraryView {
           + '"kavanca" ile "kavança" aynı sonucu verir.'));
         frag.appendChild(empty);
       } else {
-        frag.appendChild(el('div', 'section-sub', `${hits.length} konu bulundu`));
+        const topics = hits.filter((h) => h.route.kind === 'topic').length;
+        const sources = hits.length - topics;
+        frag.appendChild(el('div', 'section-sub', [
+          topics ? `${topics} konu` : null,
+          sources ? `${sources} kaynak belge` : null,
+        ].filter(Boolean).join(' · ')));
         for (const hit of hits) frag.appendChild(this.hitRow(hit));
       }
       this.root.replaceChildren(frag);
@@ -182,15 +187,22 @@ export class LibraryView {
   }
 
   hitRow(hit) {
+    const isSource = hit.route.kind === 'source';
     const row = el('button', 'row hit');
     const grow = el('div', 'grow');
-    grow.appendChild(el('div', 'title', hit.topic.title));
-    if (hit.matchedKeyword) {
+    const title = el('div', 'title', hit.title);
+    // A source hit is the raw lecture rather than a written-up topic, so it is
+    // marked before the reader taps into it.
+    if (isSource) title.prepend(svg(ICON.doc, 'icon hit-icon'));
+    grow.appendChild(title);
+    if (isSource) {
+      grow.appendChild(el('div', 'kw src', 'kaynak belge'));
+    } else if (hit.matchedKeyword) {
       grow.appendChild(el('div', 'kw', `anahtar kelime: ${hit.matchedKeyword}`));
     }
     grow.appendChild(el('div', 'snippet', hit.snippet));
     row.appendChild(grow);
-    row.addEventListener('click', () => this.push({ kind: 'topic', id: hit.topic.id }));
+    row.addEventListener('click', () => this.push({ ...hit.route }));
     return row;
   }
 

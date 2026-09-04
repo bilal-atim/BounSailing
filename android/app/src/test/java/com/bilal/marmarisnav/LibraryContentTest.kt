@@ -2,6 +2,8 @@ package com.bilal.marmarisnav
 
 import com.bilal.marmarisnav.library.Library
 import com.bilal.marmarisnav.library.LibrarySearch
+import com.bilal.marmarisnav.library.SearchHit
+import com.bilal.marmarisnav.library.SearchTarget
 import com.bilal.marmarisnav.library.SourceDoc
 import com.bilal.marmarisnav.library.Topic
 import java.io.File
@@ -47,6 +49,12 @@ class LibraryContentTest {
     private val library = Library(emptyList(), topics, sources)
 
     private val linkPattern = Regex("""\[\[([^\]|]+)(?:\|[^\]]+)?\]\]""")
+
+    private val SearchHit.topicId: String?
+        get() = (target as? SearchTarget.TopicRef)?.topic?.id
+
+    private val SearchHit.sourceId: String?
+        get() = (target as? SearchTarget.SourceRef)?.doc?.id
 
     @Test
     fun `every topic parses with the fields the UI needs`() {
@@ -116,7 +124,7 @@ class LibraryContentTest {
         for ((query, topicId) in expected) {
             val hits = search.search(query)
             assertTrue("'$query' returned nothing", hits.isNotEmpty())
-            assertEquals("'$query' ranked the wrong topic first", topicId, hits.first().topic.id)
+            assertEquals("'$query' ranked the wrong topic first", topicId, hits.first().topicId)
         }
     }
 
@@ -124,11 +132,33 @@ class LibraryContentTest {
     fun `a term buried in the body still finds its topic`() {
         val search = LibrarySearch(library)
         // "spinlock" is not in any title; it lives in the safety topic's text.
-        val hits = search.search("spinlock").map { it.topic.id }
+        val hits = search.search("spinlock").map { it.topicId }
         assertTrue("spinlock -> $hits", "yelken-basarken-guvenlik" in hits)
 
-        val neta = search.search("neta").map { it.topic.id }
+        val neta = search.search("neta").map { it.topicId }
         assertTrue("neta -> $neta", "teknenin-netalanmasi" in neta)
+    }
+
+    @Test
+    fun `a term that only the source documents carry still comes back`() {
+        val search = LibrarySearch(library)
+        // Neither word appears in any topic; they are only in the raw lectures,
+        // which is exactly the case the search used to miss entirely.
+        assertEquals(
+            listOf("2-yildiz-teorik-kitabi"),
+            search.search("abandone").mapNotNull { it.sourceId },
+        )
+        assertEquals(
+            listOf("yariscilik-1"),
+            search.search("buyukada").mapNotNull { it.sourceId },
+        )
+    }
+
+    @Test
+    fun `a topic outranks the source document it was drawn from`() {
+        val hits = LibrarySearch(library).search("balon")
+        assertEquals("the written-up topic should lead", "balon", hits.first().topicId)
+        assertTrue("the source should still be offered", "balon" in hits.mapNotNull { it.sourceId })
     }
 
     @Test

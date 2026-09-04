@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bilal.marmarisnav.library.Block
 import com.bilal.marmarisnav.library.parseMarkdown
+import com.bilal.marmarisnav.library.prettyLabel
 
 /** Where a tapped link points. */
 sealed interface LinkTarget {
@@ -254,15 +255,6 @@ private fun buildInline(
     }
     if (cursor < raw.length) append(raw.substring(cursor))
 }
-
-/**
- * Fallback label for a link whose target the library could not resolve: turn
- * the slug back into words rather than showing the raw id.
- */
-fun prettyLabel(target: String): String =
-    target.removePrefix("src:").split('-').joinToString(" ") { part ->
-        part.replaceFirstChar { it.uppercaseChar() }
-    }
 
 /** Strips inline markup for places that render plain text, such as table headers. */
 private fun stripInline(raw: String, labelFor: (String) -> String): String = INLINE.replace(raw) { m ->

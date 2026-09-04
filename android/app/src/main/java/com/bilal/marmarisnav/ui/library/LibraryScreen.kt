@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bilal.marmarisnav.library.Library
 import com.bilal.marmarisnav.library.SearchHit
+import com.bilal.marmarisnav.library.SearchTarget
 import com.bilal.marmarisnav.library.Topic
 
 @Composable
@@ -100,7 +101,12 @@ private fun LibraryHome(library: Library, viewModel: LibraryViewModel, modifier:
         )
 
         if (query.isNotBlank()) {
-            SearchResults(results, query, viewModel::openTopic)
+            SearchResults(results, query) { target ->
+                when (target) {
+                    is SearchTarget.TopicRef -> viewModel.openTopic(target.topic.id)
+                    is SearchTarget.SourceRef -> viewModel.openSource(target.doc.id)
+                }
+            }
         } else {
             LazyColumn(Modifier.fillMaxSize()) {
                 item {
@@ -201,7 +207,11 @@ private fun SearchBar(query: String, onQueryChange: (String) -> Unit, onClear: (
 }
 
 @Composable
-private fun SearchResults(results: List<SearchHit>, query: String, onOpen: (String) -> Unit) {
+private fun SearchResults(
+    results: List<SearchHit>,
+    query: String,
+    onOpen: (SearchTarget) -> Unit,
+) {
     if (results.isEmpty()) {
         Column(
             Modifier
@@ -222,30 +232,59 @@ private fun SearchResults(results: List<SearchHit>, query: String, onOpen: (Stri
         return
     }
 
+    val topics = results.count { it.target is SearchTarget.TopicRef }
+    val sources = results.size - topics
+
     LazyColumn(Modifier.fillMaxSize()) {
         item {
             Text(
-                text = "${results.size} konu bulundu",
+                text = listOfNotNull(
+                    "$topics konu".takeIf { topics > 0 },
+                    "$sources kaynak belge".takeIf { sources > 0 },
+                ).joinToString(" · "),
                 fontSize = 13.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(start = 16.dp, top = 6.dp, bottom = 6.dp),
             )
         }
-        items(results, key = { it.topic.id }) { hit ->
+        items(results, key = { it.key }) { hit ->
             Column(
                 Modifier
                     .fillMaxWidth()
-                    .clickable { onOpen(hit.topic.id) }
+                    .clickable { onOpen(hit.target) }
                     .padding(horizontal = 16.dp, vertical = 12.dp),
             ) {
-                Text(hit.topic.title, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
-                hit.matchedKeyword?.let {
-                    Spacer(Modifier.height(3.dp))
-                    Text(
-                        text = "anahtar kelime: $it",
-                        fontSize = 12.sp,
-                        color = MaterialTheme.colorScheme.primary,
-                    )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    // A source hit is the raw lecture rather than a written-up
+                    // topic, so it is marked before the reader taps into it.
+                    if (hit.target is SearchTarget.SourceRef) {
+                        Icon(
+                            Icons.Default.Description,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(15.dp),
+                        )
+                        Spacer(Modifier.width(6.dp))
+                    }
+                    Text(hit.title, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+                }
+                when {
+                    hit.target is SearchTarget.SourceRef -> {
+                        Spacer(Modifier.height(3.dp))
+                        Text(
+                            text = "kaynak belge",
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    hit.matchedKeyword != null -> {
+                        Spacer(Modifier.height(3.dp))
+                        Text(
+                            text = "anahtar kelime: ${hit.matchedKeyword}",
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                    }
                 }
                 Spacer(Modifier.height(4.dp))
                 Text(
@@ -423,11 +462,6 @@ private fun handleLink(target: LinkTarget, viewModel: LibraryViewModel) {
         // there is nowhere useful to send it.
         is LinkTarget.External -> Unit
     }
-}
-
-private fun Library.labelFor(id: String): String = when {
-    id.startsWith("src:") -> source(id.removePrefix("src:"))?.title ?: prettyLabel(id)
-    else -> topic(id)?.title ?: prettyLabel(id)
 }
 
 @Composable

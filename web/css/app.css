@@ -117,6 +117,12 @@ body[data-theme="night"] .brand img { opacity: .55; filter: brightness(1.4); }
 }
 
 .hit .kw { font-size: 12px; color: var(--accent); margin-top: 3px; }
+/* A source hit is the raw lecture, not a written-up topic: muted, not accented. */
+.hit .kw.src { color: var(--muted); }
+.hit .hit-icon {
+  width: 15px; height: 15px; color: var(--muted);
+  vertical-align: -2px; margin-inline-end: 6px;
+}
 .hit .snippet {
   font-size: 13px; color: var(--muted); margin-top: 4px;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;

@@ -108,11 +108,10 @@ export class Library {
       json('assets/index.json'),
     ]);
 
-    const sources = await Promise.all(sourceIndex.map(async (o) => ({
-      id: o.id,
-      title: o.title,
-      body: await text(`${ROOT}/sources/${o.file}`),
-    })));
+    const sources = await Promise.all(sourceIndex.map(async (o) => {
+      const body = await text(`${ROOT}/sources/${o.file}`);
+      return { id: o.id, title: o.title, body, haystack: foldCase(`${o.title}\n${body}`) };
+    }));
 
     // The asset listing is the manifest of what shipped, so the topic files do
     // not have to be enumerated a second time in a hand-kept index.

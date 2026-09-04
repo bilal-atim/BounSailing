@@ -36,7 +36,10 @@ data class SourceDoc(
     val id: String,
     val title: String,
     val body: String,
-)
+) {
+    /** Everything search runs over, lower-cased once at load time. */
+    val haystack: String = (title + "\n" + body).foldCaseTr()
+}
 
 class Library(
     val categories: List<Category>,
@@ -57,6 +60,13 @@ class Library(
     fun backlinks(id: String): List<Topic> =
         topics.filter { it.id != id && LINK.findAll(it.body).any { m -> m.target() == id } }
             .sortedBy { it.title }
+
+    /** Resolves a link target to the title it should display. */
+    fun labelFor(target: String): String = when {
+        target.startsWith("src:") ->
+            source(target.removePrefix("src:"))?.title ?: prettyLabel(target)
+        else -> topic(target)?.title ?: prettyLabel(target)
+    }
 
     companion object {
         private const val ROOT = "library"
@@ -168,3 +178,12 @@ fun String.deaccent(): String {
     }
     return sb.toString()
 }
+
+/**
+ * Fallback label for a link whose target the library could not resolve: turn
+ * the slug back into words rather than showing the raw id.
+ */
+fun prettyLabel(target: String): String =
+    target.removePrefix("src:").split('-').joinToString(" ") { part ->
+        part.replaceFirstChar { it.uppercaseChar() }
+    }
