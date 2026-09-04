@@ -1,7 +1,7 @@
 ---
 title: Waste Atma Eğitimi
 category: hazirlik
-order: 4
+order: 5
 keywords: waste, atık tankı, mavi kart, atık boşaltma, vana, pis su, kirlilik, 8 mil
 summary: Atık su tankının marinada ve zorunlu hâllerde denizde nasıl boşaltıldığı, mavi kart ve uyulması gereken kurallar.
 sources: gezi-egitimleri-el-kitabi

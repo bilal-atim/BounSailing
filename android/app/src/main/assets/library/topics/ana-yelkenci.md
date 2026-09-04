@@ -1,10 +1,10 @@
 ---
 title: Ana Yelkenci Ne Yapar
 category: roller
-order: 3
+order: 4
 keywords: ana yelkenci, ana yelken, iskota, broş, bumba, araba, traveller, kavança, boşlamak, toplama
 summary: Ana yelken iskotasından sorumlu kişinin seyirdeki ve manevralardaki görevleri.
-sources: gezi-egitimleri-el-kitabi, trim, gezi-ve-yelken-seyri
+sources: gezi-egitimleri-el-kitabi, trim, gezi-ve-yelken-seyri, gezi-calisma-sorulari
 ---
 
 Ana yelkenci, ana yelkenin açısından ve gerginliğinden sorumlu kişidir. Görev tanımı sakin görünür ama kavançada ve sert havada teknenin güvenliği doğrudan onun elindedir.
@@ -33,13 +33,24 @@ Kavançada ana yelkencinin görevi **çok önemlidir:**
 1. **Kavança atılmadan hemen önce** ana yelkeni, bumba omurga hattına yaklaşacak kadar **toplar.** Bu sayede bumba karşı tarafa çok hızlı geçmez.
 2. **Kavança atıldıktan hemen sonra** ana yelkeni **boşlar.**
 
+Iskota bu manevrada **vinçte kilitli tutulmaz**; elde, kontrol edilebilir durumda olmalıdır. Teknenin hareketi sürekli takip edilir, ıskota boşa düşmez. Ekibin başı bumba hattından uzak durur ve halat el ya da ayak üzerinden geçmez.
+
 > Ana yelkeni boşlamada geç kalırsa, sert bir havada tekne **broşa girebilir.**
 
 Bkz. [[kavanca]]
 
 ## Sert havada
 
-Rüzgâr arttıkça ana yelken alanını küçültmek gerekir. Camadan vurma (reefing) işleminde ana yelkenci ana roldedir. Bkz. [[sert-hava-seyri]]
+Rüzgâr arttıkça ana yelken alanını küçültmek gerekir. Camadan vurma (reefing) işleminde ana yelkenci ana roldedir: ıskotayı salar, mandarı camadan seviyesine kadar mayna eder ve camadan halatını kilitler. Bkz. [[camadan]], [[sert-hava-seyri]]
+
+## Iskota mı, araba mı
+
+Tekne orsada aşırı bayılıyorsa iki müdahale birbirinin yerine geçmez:
+
+- **Iskotayı salmak** yükü anında boşaltır — ama yelkenin **bükümünü artırır** ve formunu bozar
+- **Arabayı rüzgâraltına indirmek** yelkenin şeklini korur, yalnızca rüzgâr açısını ve yan kuvveti azaltır
+
+Anlık ratalarda ıskota salınır; sürekli sert havada araba rüzgâraltında tutulup ıskota trim edilir. Bkz. [[trimci]], [[trim]]
 
 ## Ayı bacağında
 

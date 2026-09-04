@@ -1,7 +1,7 @@
 ---
 title: Navigatör, Piyano ve Sweeper
 category: roller
-order: 6
+order: 7
 keywords: navigatör, piyano, sweeper, ortacı, vardiya, görev dağılımı, istasyon, mandar, rota, mevki
 summary: Teknedeki diğer istasyonlar ve uzun seyirlerde vardiya sisteminin kurulması.
 sources: gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi

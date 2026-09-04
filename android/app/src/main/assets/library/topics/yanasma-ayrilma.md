@@ -4,7 +4,7 @@ category: manevralar
 order: 5
 keywords: yanaşma, ayrılma, tonoz, kıç halatı, koç boynuzu, kakıç, tornistan, pervane etkisi, usturmaça, iskele, pasarella, rodalama
 summary: İskeleye tonozla yanaşma ve iskeleden ayrılma manevralarında dümen, kıç halatı ve tonoz görevleri.
-sources: gezi-egitimleri-el-kitabi, gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi
+sources: gezi-egitimleri-el-kitabi, gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi, gezi-calisma-sorulari
 ---
 
 Yanaşma ve ayrılma, her denizcinin çok iyi öğrenmesi ve pratik etmesi gereken manevralardır. İçlerinde birçok değişken barındırırlar; yetkin bir denizci tüm değişkenlere hâkim olup manevrasını bunlara göre şekillendirir.
@@ -59,7 +59,7 @@ Bkz. [[dugumler]]
 
 ## İskeleden ayrılmak
 
-1. Dümenci motoru çalıştırır. **Ayrılmadan 15 dakika önce** çalıştırıp ısıtmanızı öneririm, özellikle soğuk havalarda.
+1. Dümenci [[motor|motoru çalıştırır]]. **Ayrılmadan 15 dakika önce** çalıştırıp ısıtmanızı öneririm, özellikle soğuk havalarda.
 2. Kıç halatları **küçük bir miktar boşlanır** ve tonozun baştan çözülmesine imkân sağlanır.
 3. Tonoz çözülüp denizde teknenin bir miktar uzağına atıldıktan sonra **batması beklenir.**
 4. Tonoz batınca tonozcu dümenciye **haber verir.**
@@ -67,4 +67,36 @@ Bkz. [[dugumler]]
 6. Tekne ilerlemeye başlayınca kıç halatları tamamen boşlanıp tekneye toplanır.
 7. Kıç halatlarındaki kişiler halatları **olabildiğince hızlı toplar** ve **denizde halat olmadığına** dikkat eder — denizdeki bir halat pervaneye dolanıp büyük sıkıntı yaratır.
 
-İlgili konular: [[demirleme]], [[teknenin-netalanmasi]], [[dumenci]]
+> **Tonoz atıldıktan sonra vitesi ileri rölantide tutun.** Tekne geriye kaçarsa tonoz halatını pervaneye alır.
+
+## Rüzgâr varsa hangi halat önce
+
+Kıç halatlarını her zaman aynı sırayla toplamazsınız. Sizi asıl tutan halat **rüzgârüstü** halattır; önce **rüzgâraltı** halatı toplatılır.
+
+Örneğin rüzgâr **sancak kıç omuzluktan** esiyorsa önce **iskele** kıç halatı alınır. Rüzgâr hafifse ikisi birden içeri alınabilir, ama öncelik her zaman rüzgâraltı halatındadır.
+
+Çıkışta rüzgâr sancak kıçtan bastığı için baş iskeleye düşme eğilimi gösterir; dümenle düzeltilir.
+
+## Aborda olduğunuz tekneden ayrılmak
+
+Bir koyda demirlisiniz ve sancağınızda size aborda olmuş bir tekne var.
+
+**Rüzgâr sancak kıç omuzluktan** — yani yandaki teknenin bulunduğu yönden — **esiyorsa:** rüzgâr zaten sizi diğer tekneden açacağı için sıkışma riski yoktur.
+
+1. Motor **boşta** çalıştırılır
+2. Kıç halatları toplanır
+3. Baş ve kıç açmazları **aynı anda** alınır
+4. **Boşta gaz verilir** — bu adım çok önemlidir ve unutulmamalıdır: ırgadın çektiği yükü karşılamak için motor devri yükseltilir, tekne ileri hareket etmez
+5. Demir toplanmaya başlanır; tekne demir üzerine ilerlerken yön dümenle kontrol edilir
+6. Demir kalkıp emniyete alındıktan sonra seyre çıkılır
+
+**Rüzgâr iskele kıç omuzluktan esseydi** rüzgâr sizi sancaktaki teknenin üzerine bastıracaktı. Yine iki açmaz da aynı anda alınır, ama demir toplanmaya başladıktan sonra mesafe dümenle korunur:
+
+- Teknenizin **başı** yandaki tekneye yaklaşırsa dümen **iskele** yapılır
+- Teknenizin **kıçı** yaklaşırsa dümen **sancak** yapılır
+
+> Bu senaryoda ileri gaz vermek gibi bir konsept, ekstrem durumlar dışında yoktur. Gerekirse usturmaça ve el ile destek verilir.
+
+Demirle bağlanma ve bosa kancası için bkz. [[demirleme]]
+
+İlgili konular: [[demirleme]], [[teknenin-netalanmasi]], [[dumenci]], [[motor]]

@@ -9,7 +9,7 @@
     "id": "2-yildiz-teorik-kitabi",
     "title": "2. Yıldız Teorik Kitabı",
     "file": "2-yildiz-teorik-kitabi.md",
-    "chars": 122256
+    "chars": 122254
   },
   {
     "id": "balon",
@@ -24,10 +24,22 @@
     "chars": 3998
   },
   {
+    "id": "gezi-calisma-sorulari",
+    "title": "Gezi Çalışma Soruları",
+    "file": "gezi-calisma-sorulari.md",
+    "chars": 16622
+  },
+  {
     "id": "haberlesme",
     "title": "Haberleşme",
     "file": "haberlesme.md",
-    "chars": 14424
+    "chars": 14534
+  },
+  {
+    "id": "gezi-organizasyonu",
+    "title": "Gezi Organizasyonu ve Hiyerarşisi",
+    "file": "gezi-organizasyonu.md",
+    "chars": 47382
   },
   {
     "id": "meteoroloji",
@@ -63,7 +75,7 @@
     "id": "acil-durum-senaryolari",
     "title": "Acil Durum Senaryoları",
     "file": "acil-durum-senaryolari.md",
-    "chars": 56149
+    "chars": 56145
   },
   {
     "id": "basustunun-el-kitabi",
@@ -87,7 +99,7 @@
     "id": "gezi-ve-yelken-seyri",
     "title": "Gezi ve Yelken Seyri",
     "file": "gezi-ve-yelken-seyri.md",
-    "chars": 8692
+    "chars": 8677
   },
   {
     "id": "gezi-egitimleri-el-kitabi",
@@ -130,5 +142,11 @@
     "title": "Yelken Trimi",
     "file": "trim.md",
     "chars": 17713
+  },
+  {
+    "id": "motor-ve-calisma-prensipleri",
+    "title": "Yelkenli Teknelerde Motor ve Çalışma Prensipleri",
+    "file": "motor-ve-calisma-prensipleri.md",
+    "chars": 34370
   }
 ]

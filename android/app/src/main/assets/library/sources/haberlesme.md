@@ -168,6 +168,8 @@ Bir geminin yardım isteği ve ona yapılan yardımın iletişim trafiğidir. Sa
 
 Nasıl yapılır ?
 
+- MAYDAY / MAYDAY / MAYDAY
+
 - MAYDAY
 
 - Burası “…”
@@ -544,6 +546,8 @@ kesinlikle kullanılmamalıdır.
 
 atılmalıdır.
 
+- 300 metre yüksekliğe ulaşır ve en az 40 saniye
+
 boyunca 30.000 kandil şiddetinde yanar.
 
 - Parlak kırmızı renklidir.
@@ -575,6 +579,8 @@ dikkatli kullanılmalıdır.
 - Gündüz kullanılır.
 
 - Rüzgaraltına fırlatılır.
+
+- Yaklaşık 3 dakika boyunca su
 
 üzerinde turuncu bir duman yayarak yanar.
 

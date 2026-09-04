@@ -49,6 +49,8 @@ Beklemek işi hem zorlaştırır hem de tehlikeye sokar. Gece seyrinde ve kendin
 
 Cenova da furling sistemiyle sarılarak küçültülür. Sert havada cenova yerine daha küçük **flok** veya **fırtına floğu** kullanılır.
 
+Karada yapılan hazırlık, seyirde adım adım camadan vurma ve furling armadaki karşılıkları için bkz. [[camadan]]
+
 ## Dalgayı karşılamak
 
 - Dalgaya **çıkarken orsala**, **inerken kafayı aç**

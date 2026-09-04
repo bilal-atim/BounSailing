@@ -1,7 +1,7 @@
 ---
 title: Örnek Gezi Programı
 category: referans
-order: 2
+order: 3
 keywords: gezi programı, gün gün, checklist, cumartesi, pazar, pazartesi, yarış, eğitim planı, rotasyon, balon günü, zodi günü
 summary: Bir haftalık gezide gün gün hangi eğitimlerin verildiği.
 sources: gezi-programi-ve-checklist, gezi-egitimleri-el-kitabi
@@ -83,5 +83,7 @@ Bkz. [[balon]]
 Bkz. [[zodi]]
 
 ---
+
+Gezinin bu programdan önce gelen kısmı — toplantılar, alışveriş listesi ve tekne teslimi — için bkz. [[gezi-hazirlik-sureci]]; programı kimin kurduğu ve kimin denetlediği için bkz. [[gezi-hiyerarsisi]]
 
 Programın ham hâli için bkz. [[src:gezi-programi-ve-checklist|Örnek Gezi Programı ve Checklist]] kaynağı.

@@ -1,7 +1,7 @@
 ---
 title: Tuvalet Eğitimi
 category: hazirlik
-order: 3
+order: 4
 keywords: tuvalet, sifon, pompa, sulu çekme, susuz çekme, klozet, duş başlığı, tıkanma, peçete, vana
 summary: Tekne tuvaletinin karadakinden farkları, sifon pompasının doğru kullanımı ve kaçınılması gerekenler.
 sources: gezi-egitimleri-el-kitabi

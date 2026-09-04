@@ -42,9 +42,22 @@ TITLES = {
     "trim.md": "Yelken Trimi",
     "gezi-programi-ve-checklist.md": "Örnek Gezi Programı ve Checklist",
     "temel-denizcilik-terimleri.md": "Temel Denizcilik Terimleri",
+    "Gezi Çalışma Soruları.md": "Gezi Çalışma Soruları",
+    "Makale Sıla.md": "Gezi Organizasyonu ve Hiyerarşisi",
+    "yelkenli-teknelerde-motor-ve-calisma-prensipleri-mete-mutlu.md":
+        "Yelkenli Teknelerde Motor ve Çalışma Prensipleri",
+}
+
+# Ids are referenced from the topics as [[src:...]], so a few filenames get one
+# chosen for them rather than the slug: an author's working title ("Makale
+# Sıla") and a name long enough to be unreadable in a link.
+IDS = {
+    "Makale Sıla.md": "gezi-organizasyonu",
+    "yelkenli-teknelerde-motor-ve-calisma-prensipleri-mete-mutlu.md": "motor-ve-calisma-prensipleri",
 }
 
 NORM_TITLES = {unicodedata.normalize("NFC", k): v for k, v in TITLES.items()}
+NORM_IDS = {unicodedata.normalize("NFC", k): v for k, v in IDS.items()}
 
 PIC = re.compile(r"<!-- Start of picture text -->.*?<!-- End of picture text -->", re.S)
 # A line that is mostly OCR debris: few real words, lots of punctuation/short tokens.
@@ -57,7 +70,9 @@ def is_noise(line):
     letters = sum(c.isalpha() for c in s)
     if len(s) > 20 and letters / len(s) < 0.55:
         return True
-    words = [w for w in re.split(r"\s+", s) if w]
+    # The list marker is not a word; counting it as one used to drop short
+    # bullets like "- Keten ya da teflon bant" as if they were OCR debris.
+    words = [w for w in re.split(r"\s+", re.sub(r"^\s*[-*]\s+", "", s)) if w]
     if len(words) >= 6:
         short = sum(1 for w in words if len(w) <= 2)
         if short / len(words) > 0.45:
@@ -72,6 +87,12 @@ for name in sorted(os.listdir(SRC)):
     raw = PIC.sub("", raw)
     raw = raw.replace("<br>", " ").replace("<mark>", "").replace("</mark>", "")
     raw = re.sub(r"</?u>", "", raw)
+    # The library's Markdown subset has no backslash escapes, so a "1\." written
+    # by a converter would reach the reader with the backslash still in it.
+    raw = re.sub(r"\\([.\-+()\[\]])", r"\1", raw)
+    # One of the converters wrote its bullets as "- \-", which unescaping turns
+    # into a doubled marker; the second one is not a nested list, just debris.
+    raw = re.sub(r"(?m)^(\s*[-*]\s+)[-*]\s+", r"\1", raw)
     out, blank = [], 0
     for line in raw.split("\n"):
         if is_noise(line):
@@ -87,8 +108,9 @@ for name in sorted(os.listdir(SRC)):
     if len(text.strip()) < 400:
         print(f"      -  SKIPPED (metin yok, gorunti tabanli): {name}")
         continue
-    s = slug(name)
-    title = NORM_TITLES.get(unicodedata.normalize("NFC", name), os.path.splitext(name)[0])
+    key = unicodedata.normalize("NFC", name)
+    s = NORM_IDS.get(key, slug(name))
+    title = NORM_TITLES.get(key, os.path.splitext(name)[0])
     open(os.path.join(DST, s + ".md"), "w", encoding="utf-8").write(text)
     index.append({"id": s, "title": title, "file": s + ".md", "chars": len(text)})
 

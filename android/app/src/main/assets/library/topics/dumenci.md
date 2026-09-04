@@ -1,10 +1,10 @@
 ---
 title: Dümenci Ne Yapar
 category: roller
-order: 2
+order: 3
 keywords: dümenci, skipper, kaptan, alesta, komut, rota, dümen tutmak, dolap dümen, alabanda, köre düşmek
 summary: Teknenin ve ekibin performansından sorumlu, son karar yetkisi kendisinde olan kişinin görevleri ve manevralardaki rolü.
-sources: gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi, gezi-egitimleri-el-kitabi
+sources: gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi, gezi-egitimleri-el-kitabi, gezi-calisma-sorulari
 ---
 
 Dümenci (skipper) görevi genellikle teknedeki **en deneyimli** ekip üyesi tarafından üstlenilir. Bu kişi ekibin ve teknenin performansından sorumludur, ekibin uyumlu çalışmasını gözetir ve **teknedeki son karar yetkisi daima dümencidedir.**
@@ -56,6 +56,32 @@ POB uyarısını duyan dümenci hemen **kafayı açıp rotadan düşer**; aynı 
 Yanaşma arabayla park etmeye benzer, ama akışkan bir yüzeydeyiz: her türlü akıntı ve rüzgâr bizi istemediğimiz yöne iter. Ayrıntılar için bkz. [[yanasma-ayrilma]]
 
 > **Panik yapmayın.** Özellikle dümende panik olursanız daha büyük karmaşalar çıkar. Sakin kafayla yapılan manevrada çıkabilecek sorunlar minimum düzeydedir.
+
+## Sağanakta ve aşırı bayılmada
+
+Ani bir sağanakta dümencinin refleksi **seyre göre değişir** — ve iki durum birbirinin tam tersidir.
+
+**Balon seyrinde: kafayı aç.** Tekne rüzgâraltına döndürüldüğünde görünen rüzgâr açısı genişler ve şiddeti azalır; balon üzerindeki yük düşer, tekne balonun altına girer ve dengesini yeniden bulur. Dümen hareketi ani değil, **kontrollü ve yumuşak** olmalıdır. Aynı anda ana yelken ıskotası da salınarak yükün bir kısmı boşaltılabilir.
+
+> Kafayı açarken pupaya fazla inmeyin; aksi hâlde istemsiz kavança riski doğar. Trimci bu esnada balon ve ana yelken ıskotasında tetikte olmalıdır.
+
+**Orsa seyrinde: orsala, yani biraz köre düş.** Tekneyi rüzgâra doğru döndürmek yelkenlerin ön yakalarını pırpırlatır ve üzerlerindeki yükü azaltır; bu, bayılmayı engellemede kafa açmaktan çok daha etkilidir.
+
+Çok sert havalarda normal orsa açısından **daha dar bir açıda** seyredip yelkenleri sürekli hafif körde bırakmak (*feathering*) mantıklı bir yöntemdir: rata geldikçe dümenle birkaç derece orsalanır, rata geçince eski açıya dönülür.
+
+> **Orsa seyrinde kafayı açmak yükü artırır ve bayılmayı büyütür.** Balon seyrindeki refleksle karıştırılmamalıdır.
+
+Rüzgâr sürekli sertse çözüm dümende değil yelken alanındadır. Bkz. [[camadan]], [[sert-hava-seyri]]
+
+## İstemsiz kavançadan kaçınma
+
+Pupa veya geniş apaz seyrinde dümencinin işi kavançayı atmak değil, **atlatmamaktır.**
+
+- Mevcut seyirde **kafayı çok açmayın.** Rüzgârın tam kıçtan geldiği açıdan (iğnecik) uzak durulur, geniş apazda kalınır; bu açıda rüzgârın birkaç derecelik dönmesi bile bumbayı karşıya atabilir
+- Rüzgâr göstergesi ve flama sürekli takip edilir
+- Dalgada savrulmalarda dümen erken toplanır, teknenin kıçının rüzgâra kaçmasına izin verilmez
+
+Ana yelkenci de her an istemsiz kavança ihtimaline karşı tetiktedir: ana yelkenin karşıya geçme eğilimi olduğu anda ıskotanın boşu alınır. Bkz. [[ana-yelkenci]], [[kavanca]]
 
 ## Ayı bacağı seyrinde
 

@@ -1,7 +1,7 @@
 ---
 title: Gezi Öncesi Checklist Eğitimi
 category: hazirlik
-order: 1
+order: 2
 keywords: checklist, emniyet ekipmanı, can salı, yangın söndürücü, ilkyardım kutusu, can yeleği, harness, teslim alma, charter, mavi kart, navigasyon seti
 summary: Tekneyi charter firmasından teslim alırken yapılan ekipman kontrolü ve gezi başlangıcında tamamlanması gereken maddeler.
 sources: gezi-egitimleri-el-kitabi, gezi-programi-ve-checklist, gezi-ve-yelken-seyri
@@ -57,4 +57,4 @@ Bkz. [[navigasyon]]
 - [[yanasma-ayrilma|Yanaşma-ayrılma]], tonoz, kıç halatı alma
 - Rota ve tanışma
 
-Günlük programın tamamı için bkz. [[gezi-programi]]
+Bu kontrolün gezi hazırlığının neresine düştüğü için bkz. [[gezi-hazirlik-sureci]]. Günlük programın tamamı için bkz. [[gezi-programi]]

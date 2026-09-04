@@ -1,7 +1,7 @@
 ---
 title: Terimler Sözlüğü
 category: referans
-order: 1
+order: 2
 keywords: terim, sözlük, vardavela, kumtel, bordo, alabanda, küpeşte, güverte, havuzluk, portuç, kakıç, pruva, pupa, orsa, apaz, sancak, iskele, salma, dümen, yeke, koç boynuzu, kurt ağzı, makara, mandar, iskota, karula, camadan, bimini, palamar, pasarella, şakıl, pushpit, pullpit, sintine, aynalık, lumbar, spinlock, piyano, elincesi, dingi, furling, gurcata, bumba, balançina, istralya, çarmıh
 summary: Gezide en sık geçen denizcilik terimlerinin konu başlıklarına göre sözlüğü.
 sources: temel-denizcilik-terimleri, 1-yildiz-teorik-kitabi, seyirler-ve-manevralar

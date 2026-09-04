@@ -1536,7 +1536,7 @@ RECEIVED MAYDAY
 
 -
 
-- Tehlikedeki tekne, çağrı yapamayacak durumda ise,
+Tehlikedeki tekne, çağrı yapamayacak durumda ise,
 
 Bu durumda **MAYDAY RELAY** (3 kez) mesajı verilir.
 

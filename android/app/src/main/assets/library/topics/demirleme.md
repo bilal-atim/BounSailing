@@ -4,7 +4,7 @@ category: manevralar
 order: 6
 keywords: demirleme, demir, çapa, kaloma, funda demir, vira demir, zincir, demir tarama, aborda, baştankara, kıçtankara, alarga
 summary: Demir atma ve alma, kaloma hesabı ve demirin tutup tutmadığının kontrolü.
-sources: gezi-egitimleri-el-kitabi, gezi-ve-yelken-seyri, gezi, 1-yildiz-teorik-kitabi
+sources: gezi-egitimleri-el-kitabi, gezi-ve-yelken-seyri, gezi, 1-yildiz-teorik-kitabi, gezi-calisma-sorulari
 ---
 
 Demirleme, koyda geceleme ve iskele olmayan yerlerde durabilmenin temel yöntemidir. Gezilerde [[yanasma-ayrilma|yanaşma-ayrılma]] eğitiminin ikinci yarısını oluşturur.
@@ -55,8 +55,35 @@ Zincir vira edilirken tekne yavaşça demirin üstüne doğru sürülür; zincir
 | **Aborda** | Tekne borda vererek iskeleye veya başka bir tekneye yan bağlanır. |
 | **Alarga** | Karaya bağlanmadan, sadece demirle açıkta durmak. |
 
+## Bosa kancası — ırgadı korumak
+
+Bir koyda uzun süre kalacaksanız rüzgâr ve dalga yükünün doğrudan **ırgada** binmesini istemezsiniz. Yük, esnek bir halat üzerinden alınır:
+
+1. **Önce ırgatla demir bir miktar toplanır.** İki sebebi vardır: kanca takıldıktan sonra demir salınacağı için tekne geriye kaymasın, ve kanca daha yüksekten, rahat çalışılabilir bir noktadan takılabilsin
+2. **Bosa kancası**, suyun üstünde kalan zincir baklalarından birinden geçirilir
+3. **Bosa halatı** baştaki koç boynuzlarından birine volta edilir — bkz. [[dugumler]]
+4. Irgattaki yükü bosaya aktarabilmek için ırgattan bir miktar demir salınır
+5. Zincir, ırgat ile bosa arasında **boşta, yay şeklinde** kalır; rüzgâr ve dalga yükü artık ırgada değil, esnek bosa halatına biner
+
+## Aborda olurken sıralama
+
+Demirlemiş bir teknenin yanına demir atarak aborda olurken önceliğiniz **yan tekneye açmaz (koltuk) vermektir**, kıç halatlarını karaya bağlamak değil.
+
+Demir atıldıktan sonra teknenin geriye kayması zaten engellenmiştir; ikinci öncelik sağa sola savrulmayı önlemek ve aborda olunacak tekneye olabildiğince yapışık durmaktır. Böylece iki tekne birbirinin çapasından da faydalanır. Açmazlar verildikten sonra kıç halatları rahatça karaya alınır.
+
+**Bu durumda tekne nerelerinden bağlıdır?**
+
+- **Baş:** demir zinciriyle; zincir ırgat ve/veya bosa üzerinden baş koç boynuzuna aktarılmıştır
+- **Kıç:** hem iskele hem sancak kıç halatlarıyla karaya
+- **Yan:** baş ve kıç koç boynuzlarından verilen **açmazlarla (koltuk halatlarıyla)** yandaki teknenin koç boynuzlarına; ileri-geri kaymayı önlemek için **çapraz** koltuk halatları da verilir
+- İki tekne arasına **usturmaçalar** yerleştirilmiş olmalıdır
+
+Ayrılma manevrası için bkz. [[yanasma-ayrilma]]
+
 ## Gece demirdeyken
 
 Demirde gecelerken **demir vardiyası** tutulur ve teknenin kaymadığı düzenli olarak kontrol edilir. Bkz. [[gece-seyri]]
+
+Demirde geceleyen teknenin panelinde çıpa ışığı ve demir alarmı için bkz. [[elektronik-panel]]
 
 İlgili konular: [[yanasma-ayrilma]], [[dugumler]], [[navigasyon]]

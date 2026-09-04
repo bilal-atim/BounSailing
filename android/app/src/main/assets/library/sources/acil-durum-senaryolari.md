@@ -349,7 +349,7 @@ _29_
 
 6. İnternet Linkleri
 
-- - -
+- -
 
 - http://gcaptain.com/rambler capsizes losing keel/?29399
 
@@ -363,7 +363,7 @@ _29_
 
 -
 
-- http://www.sail world.com/Europe/index.cfm?SEID=0&Nid=91021&SRCID=0&ntid=0&tickeruid=0&tickerCID= 0
+http://www.sail world.com/Europe/index.cfm?SEID=0&Nid=91021&SRCID=0&ntid=0&tickeruid=0&tickerCID= 0
 
 - http://www.readyabout.com.au/2011/11/puma-breaks-mast-in-southern-atlantic.html
 

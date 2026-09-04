@@ -1,7 +1,7 @@
 ---
 title: Başüstü Ne Yapar
 category: roller
-order: 5
+order: 6
 keywords: başüstü, bowman, direk dibi, balon donatma, mayna, çapariz, gönder, peeling, mandar, istasyon
 summary: Teknenin baş tarafındaki her şeyden sorumlu, dümenciden sonra en kritik görevdeki kişinin işi.
 sources: basustunun-el-kitabi, gezi-ve-yelken-seyri, 1-yildiz-teorik-kitabi

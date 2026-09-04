@@ -1,7 +1,7 @@
 ---
 title: Teknenin Netalanması
 category: hazirlik
-order: 5
+order: 6
 keywords: neta, netalama, rodalama, halat toplama, düzen, temizlik, pervane, iç neta, dış neta, çapariz
 summary: "Neta" ne demek, manevra öncesi ve sonrası teknenin içinin ve dışının nasıl temiz ve hazır tutulduğu.
 sources: gezi-egitimleri-el-kitabi, 1-yildiz-teorik-kitabi, basustunun-el-kitabi

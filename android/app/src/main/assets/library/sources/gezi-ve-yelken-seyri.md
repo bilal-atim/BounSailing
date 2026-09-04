@@ -106,15 +106,15 @@ Deneyimsiz ekip üyeleri, teknede çeşitli görevlerde çalışır. Bunlar aras
 
 ## Acil Müdahale Gereken Durumlar
 
-- \- Teknenin sabit ya da hareketli donanımına zarar gelmesi, (Direk kırılması, yelken yırtılması, mandar-halat kopması vb..)
+- Teknenin sabit ya da hareketli donanımına zarar gelmesi, (Direk kırılması, yelken yırtılması, mandar-halat kopması vb..)
 
-- \- Teknenin kendisine bir zarar gelmesi, (Çarpma sonucu hasar, su alma, dümen dolabının bozulması, motorda hasar vb..)
+- Teknenin kendisine bir zarar gelmesi, (Çarpma sonucu hasar, su alma, dümen dolabının bozulması, motorda hasar vb..)
 
-- \- Teknede yangın çıkması, (Tüp, ocak, motor, jeneratör vb. arızaları nedeniyle)
+- Teknede yangın çıkması, (Tüp, ocak, motor, jeneratör vb. arızaları nedeniyle)
 
-- \- Ekipten birinin hastalanması, yaralanması ya da bayılması,
+- Ekipten birinin hastalanması, yaralanması ya da bayılması,
 
-- \- Ekipten birinin denize düşmesi
+- Ekipten birinin denize düşmesi
 
 ## Yanaşma
 

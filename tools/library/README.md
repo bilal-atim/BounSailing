@@ -18,15 +18,22 @@ python3 tools/library/build_sources.py
 ```
 
 The script strips the OCR debris the PDF extraction left behind: `<!-- picture
-text -->` blocks, `<br>` runs, and lines that are mostly punctuation or
-two-letter fragments. Documents that extract to almost nothing are skipped and
-reported — three of them are image-only scans with no recoverable text:
+text -->` blocks, `<br>` runs, backslash escapes the library's Markdown subset
+does not understand, and lines that are mostly punctuation or two-letter
+fragments. Documents that extract to almost nothing are skipped and reported —
+three of them are image-only scans with no recoverable text:
 
 - `cift-yelkenli-ve-tek-omurgali-teknelerde-temel-trim-prensipleri.md`
 - `demirleme.md`
 - `dugum-1.md`
 
 Their subject matter is covered in the topics from other sources.
+
+A source's id is the slug of its filename, and that id is what the topics cite
+as `[[src:...]]`. Two documents get their id chosen for them in the `IDS` map at
+the top of the script, because their filenames would not survive the trip: an
+author's working title (`Makale Sıla.md`) and a name long enough to be
+unreadable inside a link. `TITLES` does the same for the display name.
 
 ## Checking the content
 
